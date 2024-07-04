@@ -63,7 +63,7 @@ Además, **los hashes de contraseñas comunes ya estan en Internet**. Si quieres h
 
 El salting es **agregar una cadena aleatoria** a la contraseña que se esta hasheando, de esa manera, **creamos una segunda contraseña** que logra hacer que incluso usuarios usando la misma cuenta **tengan hashes completamente distintos**, y adicionalmente, estos hashes al ser de cadenas totalmente distintas, **no se encuentran en Internet.**
 
-Por ejemplo, para dos usuarios distintos se generan salts aleatorias, en este caso, de 5 caracteres:
+Por ejemplo, para dos usuarios distintos se generan salts aleatorias y se agregan al principio, en este caso, de 5 caracteres:
 
 <hr>
 
@@ -72,7 +72,7 @@ Salt: P271A (generado aleatoriamente)
 
 ```python
 # 1234 con salt convertido a Hash
-P271A**1234** = c429d503c12b96fdc0cba4e325d19d14d7b88f7dec0ed19ca66f818c8e5bf5e5
+P271A1234 = c429d503c12b96fdc0cba4e325d19d14d7b88f7dec0ed19ca66f818c8e5bf5e5
 ```
 
 <hr>
@@ -82,7 +82,7 @@ Salt: H6y71 (generado aleatoriamente)
 
 ```python
 # 1234 con salt convertido a Hash (resultado distinto)
-H6y71**1234** = 6304fc6110aa9d9eb856c4df872983b7ed9872ad948331c20cbbf00f72a55d7a
+H6y711234 = 6304fc6110aa9d9eb856c4df872983b7ed9872ad948331c20cbbf00f72a55d7a
 ```
 
 <hr>
